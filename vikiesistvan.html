@@ -588,7 +588,6 @@
         if (window.twmStep < window.twmLength) {
           elem.innerHTML += window.twmString[window.twmStep];
           window.twmStep = window.twmStep + 1;
-          console.log(window.twmStep);
           window.setTimeout(() => {
             typeWriterMachine(elem, string, time);
           }, time);
