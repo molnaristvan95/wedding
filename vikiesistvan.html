@@ -2,15 +2,27 @@
 <html lang="en">
 
 <head>
-  <meta name="description" content="">
+  <meta name="description" content="Meghívás és mentrend az Esküvőnkre. Viki és István; Szeretettel várunk!">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="Ksenicz István Sztepanovics || Кшеніц Степан Степанович">
-  <meta name="keywords" content="">
-  <meta name="theme-color" content="#050">
-  <title></title>
+  <meta name="keywords" content="wedding, viki, istvan, 2024">
+  <meta name="theme-color" content="#f64">
+  <link rel="icon" type="image/ico" href="https://molnaristvan95.github.io/wedding/ring.ico">
+  <title>V &#38; I Esküvő-szervezés</title>
   <style rel="stylesheet" type="text/css">
     /* ------------------ base and templates ---------------------*/
+    @import url('https://fonts.googleapis.com/css2?family=Charm:wght@400;700&display=swap');
+
+    *,
+    html,
+    body {
+      scroll-behavior: smooth !important;
+      -webkit-scroll-behavior: smooth !important;
+      user-select: none;
+      -wwbkit-user-select: none;
+    }
+
     *:root {
       font-size: 16px;
       --opened: 'page was opened: ??';
@@ -19,12 +31,14 @@
     * {
       box-sizing: border-box;
       color: #ffab;
+      font-family: "Charm", cursive;
+      font-weight: 100;
     }
 
     body#main {
       margin: 0;
-      background: #000;
-      padding: 2vh 0 5vh 0;
+      background: #400;
+      padding: 2vh 0 2vh 0;
     }
 
     body#main::before {
@@ -33,13 +47,13 @@
       top: 4px;
       left: 4px;
       font-size: 12px;
-      width: 64px;
+      width: auto;
       overflow: hidden;
       white-space: nowrap;
     }
 
     body#main:hover::before {
-      width: auto;
+      widt: auto;
     }
 
     body>*:not(script) {
@@ -71,7 +85,8 @@
 
     button:focus,
     input:focus,
-    summary:focus {
+    summary:focus,
+    a:focus {
       outline: none;
     }
 
@@ -144,17 +159,19 @@
 
     hr {
       width: 64%;
-      border: 2px outset #030;
+      border: 1px outset #999;
       border-radius: 50%;
+      margin: 2vh auto !important;
     }
 
     footer {
       opacity: .5;
-      position: fixed;
+      positio: absolute;
       bottom: 0;
       left: 2%;
       width: 100%;
       text-align: right;
+      margin-top: 5vh !important;
     }
 
     footer a:after {
@@ -168,30 +185,235 @@
     }
 
     /* ------------------ targeted elements ---------------------*/
+    h1 {}
+
+    section {
+      borde: 1px solid red;
+      width: 100%;
+      display: table;
+    }
+
+    section>div {
+      width: 25%;
+      borde: 1px solid green;
+      display: table-cell;
+    }
+
+    section>div:nth-of-type(2) {
+      width: 50%;
+    }
+
+    #leftdiv,
+    #rightdiv {}
+
+    #leftdiv>img,
+    #rightdiv>img {
+      object-fit: contain;
+      image-rendering: optimizespeed;
+      width: 40%;
+      margin-left: calc(20% / 3);
+      margin-top: 16px;
+      vertical-align: middle;
+      border-radius: 4px;
+      transition: 8s linear all;
+      transform: rotateY(180deg);
+      backface-visibility: hidden;
+    }
+
+    #middlediv {
+      position: relative;
+    }
+
+    #abdoluteInside {
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+    }
+
+    #abdoluteInside>* {
+      text-align: center;
+      display: block;
+      margin: auto;
+    }
+
+    figure>* {
+      text-align: center;
+    }
+
+    #profile {
+      width: 16%;
+      display: block;
+      margin: auto;
+      border-radius: 50%;
+    }
+
+    #abdoluteInside>a {
+      zoom: 1.5;
+      position: relative;
+      text-decoration: none;
+      z-index: 999;
+      transition: .3s linear all;
+    }
+
+    #abdoluteInside>a:hover {
+      color: #ff9;
+    }
+
+    #abdoluteInside>a::after {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 25%;
+      bottom: 0;
+      width: 50%;
+      height: 2px;
+      background: red;
+      border-radius: 50%;
+      z-index: 90;
+      animation: pulsing 4s linear 64;
+    }
+
+    @keyframes pulsing {
+      0% {
+        width: 0%;
+        background: #0000;
+        left: 50%;
+      }
+
+      100% {
+        width: 50%;
+        background: #900;
+        left: 25%;
+      }
+    }
+
+    h2 {
+      font-size: 28px;
+    }
+
+    #namelist {
+      font-style: italic;
+      font-size: 32px;
+    }
+
+    #namelist>* {
+      transition: 4s linear all;
+      color: transparent;
+    }
+
+    iframe {
+      width: 95%;
+      height: 50vh;
+      border: 0;
+      border-radius: 8px;
+    }
+
+    #track {
+      text-align: left;
+    }
+
+    #track,
+    #supervisors {
+      font-size: 24px;
+    }
 
     /* ------------------ media queries ---------------------*/
 
+    @media screen and (max-width:1024px) {
+      iframe {
+        height: 25vh;
+      }
+
+      h2,
+      #absoluteInside>a,
+      #namelist {
+        font-size: 16px;
+      }
+
+      #supervisors {
+        background: url("https://molnaristvan95.github.io/wedding/wedding (10).jpg") no-repeat center center;
+        background-attachment: fixed;
+      }
+
+      #track {
+        background: url("https://molnaristvan95.github.io/wedding/wedding (35).jpg") no-repeat center center;
+        background-attachment: fixed;
+      }
+    }
+
     /* ------------------ black list quick test ---------------------*/
 
+    #middlediv {
+      borde: 3px solid red;
+    }
+
   </style>
-  <base target="_blank">
+  <base target="" href="">
 </head>
 
 
 <body id="main">
   <dialog id="sms" class="flex center">Hiba! Error!</dialog>
-
-  Viki és István Esküvője - Az oldal készülőben van...
-
-  <footer>&#169; <span id="actualYear">1995</span> Ksenicz István Sztepanovics &nbsp; &nbsp;
-    <small><small>
-        <br>
-        A programozó elérhetőségei:
-        <a href="tel:+36702805209"></a>
-        &nbsp; &nbsp;
-        <a href="mailto:1995molnaristvan22@gmail.com"></a>
-      </small></small>
-  </footer>
+  <figure>
+    <img id="profile" src="https://molnaristvan95.github.io/wedding/profileRings.jpeg">
+    <figcaption>
+      <q>
+        <i id="quote"></i>
+      </q>
+    </figcaption>
+  </figure>
+  <h1>
+    <center>Viki és István Esküvői programok</center>
+  </h1>
+  <section>
+    <div id="leftdiv"></div>
+    <div id="middlediv">
+      <div id="abdoluteInside">
+        <h2>UgrásSzerű tartalomjegyzék</h2>
+        <hr>
+        <a href="#namelist">Névsor a meghívottakról</a>
+        <a href="#track">Menetrend</a>
+        <a href="#supervisors">Szerepkörök</a>
+        <a href="#churchmap">Esküvői helyszín - térkép</a>
+        <a href="#partymap">A vendéglátás helyszíne</a>
+        <hr>
+        <div id="howMuch">Létszám: </div>
+        <div id="namelist"></div>
+        <div id="track">Az ünnepély időrendi mintája:
+          <dl>
+            <dt>Egyházi Esküvő</dt>
+            <dd>Mátyásföldön, 2024. május 25.-én 14:00 órakor. Természetesen mindenkivel előtte találkozunk, és együtt fogunk odamenni; a <strong>Nagy Család</strong> vélhetőleg autókkal. Ajánlott megjelennünk legalább egy-negyed órával korábban de inkább fél. A fényképek miatt is. A szertartás előrevárhatóan 1-1.5 órát fog igénybevenni.</dd>
+            <dt>Ünnepély</dt>
+            <dd>Ez még rejtély.</dd>
+          </dl>
+        </div>
+        <div id="supervisors">
+          <div>Fényképész: Bakó Karesz</div>
+          <div>Sofőr 1: Viki</div>
+          <div>Sofőr 2: Jani</div>
+          <div>Sofőr 3: Dávid</div>
+          <div>Sofőr 4: Karesz</div>
+          <div>Sofőr 5: Sanyi</div>
+          <div>Sofőr 6: Kolos</div>
+        </div>
+        <hr>
+        <iframe id="churchmap">cant load iframe</iframe>
+        <a href="https://www.google.com/maps/place/Szent+J%C3%B3zsef+pl%C3%A9b%C3%A1niatemplom/@47.507678,19.19719,136m/data=!3m1!1e3!4m6!3m5!1s0x4741c48ec4c6ab21:0x528fb5658a32ea7e!8m2!3d47.5076783!4d19.1971904!16s%2Fg%2F11y_brdg2?hl=hu&entry=ttu">Megnyitom nagyban a térképet</a>
+        <footer>&#169; <span id="actualYear">1995</span> Ksenicz István Sztepanovics &nbsp; &nbsp;
+          <small><small>
+              <br>
+              A programozó elérhetőségei:
+              <a href="tel:+36702805209"></a>
+              &nbsp; &nbsp;
+              <a href="mailto:1995molnaristvan22@gmail.com"></a>
+            </small></small>
+        </footer>
+      </div>
+    </div>
+    <div id="rightdiv"></div>
+  </section>
   <script type="text/javascript">
     console.group();
     console.time();
@@ -334,6 +556,9 @@
         return string;
       },
       toogle = (elem, min) => {
+        if (min === 'undefined') {
+          min = 16;
+        }
         if (!elem.getAttribute('data-orig-height')) {
           elem.setAttribute('data-orig-height', elem.offsetHeight);
           css(elem, 'overflow;hidden');
@@ -344,10 +569,99 @@
         } else {
           css(elem, ('height;' + (elem.getAttribute('data-orig-height')) + 'px'));
         }
+      },
+      saveImages = () => {
+        if (!!$('tIMG')[0]) {
+          for (let i of $('tIMG')) {
+            i.setAttribute('draggable', false);
+          }
+        }
+        return;
+      },
+      typeWriterMachine = (elem, string, time) => {
+        window.twmString = string,
+          window.twmLength = window.twmString.length;
+        if (!window.twmStep) {
+          window.twmStep = 0;
+        }
+        console.log(window.twmStep);
+        if (window.twmStep < window.twmLength) {
+          elem.innerHTML += window.twmString[window.twmStep];
+          window.twmStep = window.twmStep + 1;
+          console.log(window.twmStep);
+          window.setTimeout(() => {
+            typeWriterMachine(elem, string, time);
+          }, time);
+        }
       };
     /* ---------------------------- targeted functions -------------------------------- */
 
+    let genImages = (container, numfrom, numto) => {
+        for (let i = numfrom; i <= numto; i++) {
+          let im = create('IMG');
+          im.src = 'https://molnaristvan95.github.io/wedding/wedding (' + i + ').jpg';
+          append(container, im);
+        }
+      },
+      imageTricks = (container) => {
+        let choosen = random(0, (container.children.length - 1)),
+          time = 64,
+          countThem = 0;
+        for (let i of container.children) {
+          if (i.style.transform == 'rotateY(0deg)') {
+            countThem++;
+          }
+        }
+        if (countThem == container.children.length) {
+          //console.log(container.id + ' mind megfordult');
+        } else {
+          container.children[choosen].style.transform = 'rotateY(0deg)';
+          window.setTimeout(() => {
+            imageTricks(container);
+          }, time);
+        }
+      },
+      loadMap = () => {
+        //append($('#middlediv').children[0], create('IFRAME'));
+        const url = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d268.51657897145554!2d19.197068230835985!3d47.507779737889166!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4741c48ec4c6ab21%3A0x528fb5658a32ea7e!2zU3plbnQgSsOzenNlZiBwbMOpYsOhbmlhdGVtcGxvbQ!5e1!3m2!1shu!2shu!4v1714222747534!5m2!1shu!2shu';
+        $('tIFRAME')[0].src = url;
+      },
+      nameList = () => {
+        const list = 'Szirmák László, Tóth Renáta, Rácz Ádám, Rácz János, Tóth Dávid Ignác, Ksenicz Brigitta, Ács Sándor, Ksenicz György, Rózsa, Czéklás László, Kriszti, Molnár István, Molnár Judit, Riskó Éva, Riskó Roland, Riskó Tímea, Andris, Mészáros Ádám, Miklós József, Csernih Júlia, Riskó István, Riskó Katalin, Rapinczova Ildikó, Nagy Sándor, Bakóné Molnár Stella Krisztina, Bakó Károly, Molnár Adrienn, Balla Kolos',
+          arr = list.split(',').sort();
+        for (let n of arr) {
+          let el = create('DIV');
+          node(el, n);
+          append($('#namelist'), el);
+        }
+        $('#howMuch').innerHTML += $('#namelist').children.length + ' + ' + 2;
+      },
+      step = 0,
+      vawe = () => {
+        let max = $('#namelist').children.length;
+        if (step < max) {
+          $('#namelist').children[step].style.color = 'gold';
+          step++;
+          window.setTimeout(vawe, 1000);
+        }
+      };
+
+
     /* ---------------------------- callback -------------------------------- */
+
+    genImages($('#leftdiv'), 1, 26);
+    genImages($('#rightdiv'), 27, 52);
+
+    imageTricks($('#leftdiv'));
+    imageTricks($('#rightdiv'));
+
+    nameList();
+
+    window.setTimeout(vawe, 4000);
+
+    typeWriterMachine($('#quote'), 'A gyűrű jelképe a végnélküli kezdet, két emberé, s újkori ragyogása életünk boldogságát jelenti...', 100);
+
+    window.setTimeout(loadMap, 60000);
 
     /* ---------------------------- patch functions -------------------------------- */
     let justMe = {
@@ -367,17 +681,35 @@
       }
     };
     justMe.fun();
-
     dateObj.f();
-
     highlightEveryOne(true);
+    saveImages();
 
     //    window.onbeforeunload = () => {
     // return 'save?';
     // }
 
+    let patchForImageDivsHeight = () => {
+      let margs = 0;
+      for (let x of $('#rightdiv').children) {
+        margs += x.offsetHeight;
+      }
+      margs = margs / 2;
+      let freeSpace = $('#rightdiv').offsetHeight - margs,
+        oneMargTop = freeSpace / (($('#rightdiv').children.length + 10) / 2);
+      //      alert(margs + ' ' + $('#rightdiv').offsetHeight + ' ' + freeSpace + ' ' + oneMargTop);
+      for (let x of $('#rightdiv').children) {
+        x.style.marginTop = oneMargTop + 'px';
+      }
+    };
+    setTimeout(patchForImageDivsHeight, 6000);
+
+    document.documentElement.addEventListener('contextmenu', (e) => {
+      e.preventDefault();
+      document.documentElement.scrollTop = 0;
+    });
     /* ---------------------------- load test functions -------------------------------- */
-    message('Még készül', 2048);
+    message('Nincs hiba, dolgozhatsz!', 256);
     console.log('%cScript runs well!', 'font-size:32px; color:orange;');
     console.timeEnd();
 
